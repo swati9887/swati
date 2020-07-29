@@ -1,0 +1,85 @@
+#bll
+idlist=[]
+namelist=[]
+branchlist=[]
+agelist=[]
+addlist=[]
+moblist=[]
+collegelist=[]
+
+def addstudent(id,name,branch,age,add,mob,college):
+    idlist.append(id)
+    namelist.append(id)
+    branchlist.append(id)
+    agelist.append(id)
+    addlist.append(id)
+    moblist.append(id)
+    collegelist.append(id)
+def searchstudent(id):
+    i = idlist.index(id)
+    return i
+def deletestudent(id):
+    i = idlist.index(id)
+    idlist.pop(i)
+    namelist.pop(i)
+    branchlist.pop(i)
+    agelist.pop(i)
+    addlist.pop(i)
+    moblist.pop(i)
+    collegelist.pop(i)
+def modifystudent(id,name,branch,age,add,mob,college):
+    i = idlist.index(id)
+    namelist[i] = name
+    branchlist[i] = branch
+    agelist[i] = age
+    addlist[i] = add
+    moblist[i] = mob
+    collegelist[i] = college
+
+
+
+
+#pl
+def showstudent(index):
+    print(f"stud id:{idlist[index]}\t\tstud name:{namelist[index]}\t\tstud branch:{branchlist[index]}\t\tstud age:{agelist[index]}\t\t"
+          f"stud add:{addlist[index]}\t\tstud mob:{moblist[index]}\t\tstud college:{collegelist[index]}\t\t")
+
+print("welcome to swati's SMS")
+while(1):
+    print("1 for add student , 2 for search student , 3 for delete student ")
+    print(" 4 for modify student , 5 for display all student , 6 for exit ")
+    choice = input("enter choice from 1 to 6:")
+    if ("choice==1"):
+        id = input("enter student id:")
+        name = input("enter student name:")
+        branch = input("enter student branch:")
+        age = input("enter student age:")
+        add = input("enter student add:")
+        mob = input("enter student mob:")
+        college = input("enter student college:")
+        print("student added ")
+    elif("choice==2"):
+        id = input ("enter student id")
+        index = searchstudent(id)
+        showstudent (index)
+    elif(choice=="3"):
+        id = input("enter student id:")
+        deletestudent(id)
+        print("deleted successfully")
+    elif("choice==4"):
+        id = input("enter student id to modify data:")
+        name = input("enter student updated name:")
+        branch = input("enter student updated branch:")
+        age = input("enter student updated age:")
+        add = input("enter student updated add:")
+        mob = input("enter student updated mob:")
+        college = input("enter student updated collge:")
+        print("student modified successfully")
+    elif("choice==5"):
+        for i in range (len(idlist)):
+            showstudent(i)
+    elif("choice==6"):
+        print("thanks for using swati's SMS")
+    else:
+        print("incorrect choice")
+
